@@ -7,7 +7,7 @@ public class Item : MonoBehaviour
     void Start()
     {
         rd = GetComponent<Rigidbody2D>();
-        rd.AddForce(new Vector3(itemVelocity, itemVelocity, 0f));
+        rd.AddForce(new Vector3(itemVelocity, -itemVelocity, 0f));
     }
 
     void Update()

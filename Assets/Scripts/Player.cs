@@ -6,12 +6,10 @@ public class Player : MonoBehaviour
 
     Animator ani;
 
-    public GameObject bullet;
+    public GameObject[] bulletArr;
     public Transform pos = null;
 
-    //아이템
-
-    //레이저
+    public int count;
 
 
     private Vector2 minBounds;
@@ -53,7 +51,7 @@ public class Player : MonoBehaviour
         //스페이스바 누르면 총알 발사
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
-            Instantiate(bullet, pos.position, Quaternion.identity);        
+            Instantiate(bulletArr[count], pos.position, Quaternion.identity);        
         }
 
         Vector3 newPosition = transform.position + new Vector3(moveX, moveY, 0);
@@ -70,5 +68,19 @@ public class Player : MonoBehaviour
         viewPos.y = Mathf.Clamp01(viewPos.y); //y값을 0이상, 1이하로 제한한다.
         Vector3 worldPos = Camera.main.ViewportToWorldPoint(viewPos);//다시월드좌표로 변환
         transform.position = worldPos; //좌표를 적용한다.
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Item")
+        {
+            //아이템 지우기
+            Destroy(collision.gameObject);
+            //총알 업그레이드
+            if (count+1 < bulletArr.Length)
+            {
+                count++;
+            }
+        }
     }
 }

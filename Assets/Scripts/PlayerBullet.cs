@@ -4,7 +4,8 @@ public class Bullet : MonoBehaviour
 {
     public float Speed = 4.0f;
 
-
+    public GameObject effect;
+    public GameObject item;
 
     void Update()
     {
@@ -18,31 +19,28 @@ public class Bullet : MonoBehaviour
     }
 
 
-    //2D충돌 트리거이벤트
+    //충돌처리
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //미사일과 적이 부딫혔다
-        //if(collision.gameObject.tag == "Enemy")
-        //if (collision.gameObject.CompareTag("Enemy"))
-        //{
-        //    //폭발 이펙트 생성
-        //    //Instantiate(exposion, transform.position, Quaternion.identity);
-        //    //죽음사운드
-        //    //SoundManager.instance.SoundDie(); //적 죽음 사운드
-        //    //점수올려주기
-        //    //GameManager.intance.AddScore(10);
-        //    //적지우기
-        //    Destroy(collision.gameObject);
-        //    //총알 지우기 자기자신
-        //    Destroy(gameObject);
-        //}
+        if (collision.CompareTag("Monster"))
+        {
+            //이펙트
+            GameObject instanceEffect = Instantiate(effect, collision.transform.position, Quaternion.identity);
+            //1초 뒤에 지우기
+            Destroy(instanceEffect,1);
+            //몬스터
+            Destroy(collision.gameObject);
+            int per = Random.Range(0, 100);
+            //아이템 생성
+            if(per > 50)
+            {
+                GameObject itemInstance = Instantiate(item, collision.gameObject.transform.position, Quaternion.identity);
+                Destroy(itemInstance, 3);
+            }
+            
+            //미사일 삭제
+            Destroy(gameObject);
+
+        }
     }
-
-
-
-
-
-
-
-
 }
