@@ -5,6 +5,15 @@ public class Player : MonoBehaviour
     public float speed = 5f;
 
     Animator ani;
+
+    public GameObject bullet;
+    public Transform pos = null;
+
+    //아이템
+
+    //레이저
+
+
     private Vector2 minBounds;
     private Vector2 maxBounds;
     void Start()
@@ -41,6 +50,12 @@ public class Player : MonoBehaviour
         else
             ani.SetBool("up", false);
 
+        //스페이스바 누르면 총알 발사
+        if (Input.GetKeyDown(KeyCode.Space)) 
+        {
+            Instantiate(bullet, pos.position, Quaternion.identity);        
+        }
+
         Vector3 newPosition = transform.position + new Vector3(moveX, moveY, 0);
 
         // 경계를 벗어나지 않도록 위치 제한
@@ -49,6 +64,11 @@ public class Player : MonoBehaviour
 
         transform.position = newPosition;
 
-
+        //캐릭터의 월드 좌표를 뷰포트 좌표계로 변환해준다.
+        Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
+        viewPos.x = Mathf.Clamp01(viewPos.x); //x값을 0이상, 1이하로 제한한다.
+        viewPos.y = Mathf.Clamp01(viewPos.y); //y값을 0이상, 1이하로 제한한다.
+        Vector3 worldPos = Camera.main.ViewportToWorldPoint(viewPos);//다시월드좌표로 변환
+        transform.position = worldPos; //좌표를 적용한다.
     }
 }
