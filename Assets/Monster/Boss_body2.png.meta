@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1aa5c10a0d5f8614e8138c5b1f00959a
+guid: 16b1ef5bb7df2c541811840e1507b738
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3339721182395744598
-    second: Boss_left_0
+      213: -7575683616413421525
+    second: Boss_body2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,43 +109,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Boss_left_0
+      name: Boss_body2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 74
-        height: 142
+        width: 216
+        height: 327
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,20 +128,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 651cb8588b2195e20800000000000000
-      internalID: 3339721182395744598
+      spriteID: b207ee873e3cdd690800000000000000
+      internalID: -7575683616413421525
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_left_1
+      name: Boss_body2_1
       rect:
         serializedVersion: 2
-        x: 74
+        x: 216
         y: 0
-        width: 74
-        height: 142
+        width: 216
+        height: 327
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,8 +150,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cff69246109d7d34d8fdcdf1629fa393
-      internalID: 2079317042
+      spriteID: fc63060f2aaf09844991285038307827
+      internalID: -507241242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_body2_2
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 216
+        height: 327
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83ddecd3c7cb68e4c86abefec4d365c5
+      internalID: 63985844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_body2_3
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 0
+        width: 216
+        height: 327
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99445d266f1bde64ca2cf01c81948fbc
+      internalID: -1332846745
       vertices: []
       indices: 
       edges: []
@@ -186,7 +204,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 928a901118b664346937a21fcd88f18f
+    spriteID: f085c9c716c399f4ba91d47f083968a6
     internalID: 0
     vertices: []
     indices: 
@@ -196,8 +214,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Boss_left_0: 3339721182395744598
-      Boss_left_1: 2079317042
+      Boss_body2_0: -7575683616413421525
+      Boss_body2_1: -507241242
+      Boss_body2_2: 63985844
+      Boss_body2_3: -1332846745
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

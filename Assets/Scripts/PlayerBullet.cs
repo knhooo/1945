@@ -29,12 +29,18 @@ public class Bullet : MonoBehaviour
             //1초 뒤에 지우기
             Destroy(instanceEffect,1);
             //몬스터
-            collision.gameObject.GetComponent<Monster>().Damage(1);
-
-            
-            
+            collision.gameObject.GetComponent<Monster>().Damage(1);  
             //미사일 삭제
             Destroy(gameObject);
+
+        }
+        if (collision.CompareTag("Boss"))
+        {
+            //이펙트
+            GameObject instanceEffect = Instantiate(effect, collision.transform.position, Quaternion.identity);
+            //1초 뒤에 지우기
+            Destroy(instanceEffect, 1);
+            //미사일 삭제
 
         }
     }
