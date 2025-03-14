@@ -155,6 +155,7 @@ MonoBehaviour:
   ms1: {fileID: 6743833508563915129}
   ms2: {fileID: 4281237154839597903}
   Bullet: {fileID: 1762519407069221880, guid: b1f3b3d6d901cdb48a46fe16fe143960, type: 3}
+  item: {fileID: 700985998014581694, guid: 2eee8cc211f74ee4986bd3f2e3185bd2, type: 3}
 --- !u!50 &1019738933664709062
 Rigidbody2D:
   serializedVersion: 5

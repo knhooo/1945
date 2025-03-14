@@ -29,14 +29,9 @@ public class Bullet : MonoBehaviour
             //1초 뒤에 지우기
             Destroy(instanceEffect,1);
             //몬스터
-            Destroy(collision.gameObject);
-            int per = Random.Range(0, 100);
-            //아이템 생성
-            if(per > 50)
-            {
-                GameObject itemInstance = Instantiate(item, collision.gameObject.transform.position, Quaternion.identity);
-                Destroy(itemInstance, 3);
-            }
+            collision.gameObject.GetComponent<Monster>().Damage(1);
+
+            
             
             //미사일 삭제
             Destroy(gameObject);

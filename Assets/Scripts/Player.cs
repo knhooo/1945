@@ -9,8 +9,9 @@ public class Player : MonoBehaviour
     public GameObject[] bulletArr;
     public Transform pos = null;
 
-    public int count;
-
+    public int power;
+    [SerializeField]
+    private GameObject powerup;
 
     private Vector2 minBounds;
     private Vector2 maxBounds;
@@ -51,7 +52,7 @@ public class Player : MonoBehaviour
         //스페이스바 누르면 총알 발사
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
-            Instantiate(bulletArr[count], pos.position, Quaternion.identity);        
+            Instantiate(bulletArr[power], pos.position, Quaternion.identity);        
         }
 
         Vector3 newPosition = transform.position + new Vector3(moveX, moveY, 0);
@@ -77,9 +78,11 @@ public class Player : MonoBehaviour
             //아이템 지우기
             Destroy(collision.gameObject);
             //총알 업그레이드
-            if (count+1 < bulletArr.Length)
+            if (power + 1 < bulletArr.Length)
             {
-                count++;
+                power++;
+                GameObject instance = Instantiate(powerup,new Vector2(0,0), Quaternion.identity);
+                Destroy(instance, 1);
             }
         }
     }
