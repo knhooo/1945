@@ -11,13 +11,17 @@ public class Boss : MonoBehaviour
     public Transform pos1;
     public Transform pos2;
 
-
-
     void Start()
     {
+        Invoke("Hide", 2);
         StartCoroutine(BossMissle());
         StartCoroutine(CircleFire());
 
+    }
+
+    void Hide()
+    {
+        GameObject.Find("BossWarning").SetActive(false);
     }
 
     IEnumerator BossMissle()

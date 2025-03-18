@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-
+    public int hp = 100;
     public float speed = 3;
     public float delay = 1f;
 
@@ -38,8 +38,14 @@ public class Monster : MonoBehaviour
 
     public void Damage(int attack)
     {
-        ItemDrop();
-        Destroy(gameObject);
+        hp -= attack;
+        if(hp <= 0)
+        {
+            ItemDrop();
+            Destroy(gameObject);
+            //PoolManager.Instance.Return(gameObject);
+        }
+        
     }
 
     public void ItemDrop()

@@ -8,9 +8,20 @@ public class Spawn : MonoBehaviour
     public float StartTime = 1;
     public float SpawnStop = 10;//스폰 끝나는 시간
     public GameObject[] monsters;
+    public GameObject boss;
 
     bool swi = true;
     int num = 0;
+    [SerializeField]
+    GameObject textBossWarning;
+
+    private void Awake()
+    {
+        textBossWarning.SetActive(false);
+
+        //PoolManager.Instance.CreatePool(monsters[0], 10);
+        //PoolManager.Instance.CreatePool(monsters[1], 10);
+    }
 
     void Start()
     {
@@ -63,7 +74,10 @@ public class Spawn : MonoBehaviour
         //swi2 = false;
         //두번째 몬스터 코루틴
         StopCoroutine("RandomSpawn2");
-        //StartCoroutine("RandomSpawn2");
+        textBossWarning.SetActive(true);
+        //보스
+        Vector3 pos = new Vector3(0, 2.97f, 0);
+        Instantiate(boss, pos, Quaternion.identity);
     }
 
 }

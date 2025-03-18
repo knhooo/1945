@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b60c2b70766338247946cb01ae6e1271
+guid: ba93e146e38cc8b41ba5716bf4180cd2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5982286068540429759
-    second: "Energy_bar - \uBCF5\uC0AC\uBCF8_0"
+      213: -8371476657310764386
+    second: Energy_bar_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -84,7 +84,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Standalone
+    buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -98,6 +98,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -139,7 +152,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Energy_bar - \uBCF5\uC0AC\uBCF8_0"
+      name: Energy_bar_0
       rect:
         serializedVersion: 2
         x: 0
@@ -154,8 +167,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fb5de1cdb79550350800000000000000
-      internalID: 5982286068540429759
+      spriteID: e92748b855a82db80800000000000000
+      internalID: -8371476657310764386
       vertices: []
       indices: 
       edges: []
@@ -174,7 +187,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "Energy_bar - \uBCF5\uC0AC\uBCF8_0": 5982286068540429759
+      Energy_bar_0: -8371476657310764386
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

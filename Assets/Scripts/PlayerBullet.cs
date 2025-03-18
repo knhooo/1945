@@ -3,7 +3,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float Speed = 4.0f;
-
+    public int attack = 10;
     public GameObject effect;
     public GameObject item;
 
@@ -28,8 +28,10 @@ public class Bullet : MonoBehaviour
             GameObject instanceEffect = Instantiate(effect, collision.transform.position, Quaternion.identity);
             //1초 뒤에 지우기
             Destroy(instanceEffect,1);
+
+            //PoolManager.Instance.Return(collision.gameObject);
             //몬스터
-            collision.gameObject.GetComponent<Monster>().Damage(1);  
+            collision.gameObject.GetComponent<Monster>().Damage(attack);  
             //미사일 삭제
             Destroy(gameObject);
 

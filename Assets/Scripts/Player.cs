@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class Player : MonoBehaviour
     Animator ani;
 
     public GameObject[] bulletArr;
+    public GameObject laser;
+    public float laserValue;
     public Transform pos = null;
 
     public int power;
@@ -15,6 +18,9 @@ public class Player : MonoBehaviour
 
     private Vector2 minBounds;
     private Vector2 maxBounds;
+
+    public Image gauge;
+
     void Start()
     {
         // 화면의 경계를 설정
@@ -44,7 +50,7 @@ public class Player : MonoBehaviour
         else
             ani.SetBool("right", false);
 
-        if (Input.GetAxis("Vertical") >= 0.5f)//위
+        if (Input.GetAxis("Vertical") >= 0.2f)//위
             ani.SetBool("up", true);
         else
             ani.SetBool("up", false);
@@ -54,8 +60,30 @@ public class Player : MonoBehaviour
         {
             Instantiate(bulletArr[power], pos.position, Quaternion.identity);        
         }
+        else if (Input.GetKey(KeyCode.Space))//레이저
+        {
+            laserValue += Time.deltaTime;
+            gauge.fillAmount = laserValue;
 
-        Vector3 newPosition = transform.position + new Vector3(moveX, moveY, 0);
+            if (laserValue >= 1)
+            {
+                GameObject go = Instantiate(laser, pos.position, Quaternion.identity);
+                Destroy(go, 3);
+                laserValue = 0;
+            }
+        }
+        else
+        {
+            laserValue -= Time.deltaTime;
+            if(laserValue <= 0)
+            {
+                laserValue = 0;
+            }
+            gauge.fillAmount = laserValue;
+        }
+
+
+            Vector3 newPosition = transform.position + new Vector3(moveX, moveY, 0);
 
         // 경계를 벗어나지 않도록 위치 제한
         newPosition.x = Mathf.Clamp(newPosition.x, minBounds.x, maxBounds.x);
@@ -86,4 +114,5 @@ public class Player : MonoBehaviour
             }
         }
     }
+
 }
